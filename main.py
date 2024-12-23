@@ -41,7 +41,7 @@ async def redirect_func():
 async def headers_func(request: Request):
     return request.headers
 
-@app.post("/set-cookie")
+@app.get("/set-cookie")
 async def set_cookie_func(response: Response, username: str):
     response.set_cookie(key="username", value=username, max_age=60)
     return "Куки установлен!"
